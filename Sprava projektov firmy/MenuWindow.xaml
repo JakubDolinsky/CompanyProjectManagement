@@ -1,0 +1,27 @@
+﻿<Window x:Class="Sprava_projektov_firmy.MenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sprava_projektov_firmy"
+        mc:Ignorable="d"
+        Title="Správa projektov firmy" Height="450" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="235*"/>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Zoznam projektov firmy" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="0,2,0,5" />
+        <DataGridColumnHeader Grid.Row="1" Content="  ID projektu      Meno                                 Skratka                    Zákazník"/>
+        <ListBox Grid.Row="2" Name ="projListBox" ItemsSource="{Binding ListOfProjects}" />
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Name="addButton" Content="Pridať projekt" Margin="5" Click="AddButton_Click"/>
+            <Button Name="editButton" Content="Editovať projekt" Margin="5" Click="EditButton_Click"/>
+            <Button Name="delButton" Content="Vymazať projekt" Margin=" 5" Click="DelButton_Click"/>
+            <Button Name ="resetButton" Content="Reset" Margin="5" Click="ResetButton_Click"/>
+                <Button Name="changeLogin" Content="Zmena prihlasovacích údajov" Margin="5" Click="ChangeLogin_Click"/>
+        </StackPanel >
+    </Grid>
+</Window>
